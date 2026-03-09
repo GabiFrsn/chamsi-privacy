@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité – Chamsi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #2E7D5E;
+      --green-light: #4CAF50;
+      --green-pale: #e8f5e9;
+      --gold: #c9a84c;
+      --bg: #fafaf7;
+      --text: #1a2e1f;
+      --text-secondary: #4a6355;
+      --border: #d4e8dc;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* Background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 20%, rgba(46,125,94,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(76,175,80,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .app-badge::before {
+      content: '☽';
+      font-size: 16px;
+    }
+
+    h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .arabic-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: var(--green);
+      margin-bottom: 20px;
+      direction: rtl;
+    }
+
+    .last-updated {
+      font-size: 13px;
+      color: var(--text-secondary);
+      background: var(--green-pale);
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    /* Intro card */
+    .intro-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--green);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: var(--green);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2 .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      padding: 8px 0 8px 28px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--green-light);
+      font-size: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Data table */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .data-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .data-card .emoji { font-size: 24px; margin-bottom: 8px; }
+    .data-card .label { font-size: 12px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; }
+    .data-card .desc { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--green-pale);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 16px 0;
+    }
+
+    .highlight strong { color: var(--green); }
+
+    /* Contact */
+    .contact-card {
+      background: var(--green);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      color: white;
+      margin-top: 48px;
+    }
+
+    .contact-card h2 {
+      color: white;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p { color: rgba(255,255,255,0.8); margin-bottom: 20px; }
+
+    .contact-email {
+      display: inline-block;
+      background: white;
+      color: var(--green);
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      margin: 40px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 540px) {
+      .data-grid { grid-template-columns: 1fr; }
+      .container { padding: 40px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="app-badge">Chamsi App</div>
+      <h1>Politique de Confidentialité</h1>
+      <div class="arabic-title">سياسة الخصوصية</div>
+      <span class="last-updated">Dernière mise à jour : mars 2026</span>
+    </header>
+
+    <div class="intro-card">
+      Bienvenue sur <strong>Chamsi</strong>. Nous respectons votre vie privée et nous engageons à protéger vos données personnelles. Cette politique explique quelles données nous collectons, pourquoi, et comment nous les utilisons.
+    </div>
+
+    <!-- Données collectées -->
+    <section>
+      <h2><span class="icon">📋</span> Données collectées</h2>
+      <p>Chamsi collecte uniquement les données nécessaires au bon fonctionnement de l'application :</p>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="emoji">📍</div>
+          <div class="label">Localisation</div>
+          <div class="desc">Horaires de prière & direction Qibla</div>
+        </div>
+        <div class="data-card">
+          <div class="emoji">🔔</div>
+          <div class="label">Notifications</div>
+          <div class="desc">Rappels des cinq prières quotidiennes</div>
+        </div>
+        <div class="data-card">
+          <div class="emoji">📱</div>
+          <div class="label">Identifiant pub</div>
+          <div class="desc">Affichage de publicités via Google AdMob</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Localisation -->
+    <section>
+      <h2><span class="icon">📍</span> Utilisation de la localisation</h2>
+      <p>Votre position géographique est utilisée exclusivement pour :</p>
+      <ul>
+        <li>Calculer les horaires de prière précis selon votre ville</li>
+        <li>Déterminer la direction de la Qibla (direction de La Mecque)</li>
+        <li>Calculer la distance jusqu'à La Mecque</li>
+      </ul>
+      <div class="highlight">
+        <strong>Important :</strong> Votre localisation n'est jamais stockée sur nos serveurs, ni partagée avec des tiers (hors Google AdMob pour la pertinence des publicités). Elle est utilisée localement sur votre appareil.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Notifications -->
+    <section>
+      <h2><span class="icon">🔔</span> Notifications</h2>
+      <p>Avec votre autorisation, Chamsi envoie des notifications pour vous rappeler les horaires des cinq prières quotidiennes (Fajr, Dhuhr, Asr, Maghrib, Isha).</p>
+      <p>Vous pouvez désactiver ces notifications à tout moment depuis les paramètres de votre appareil.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Publicités -->
+    <section>
+      <h2><span class="icon">📢</span> Publicités – Google AdMob</h2>
+      <p>Chamsi utilise <strong>Google AdMob</strong> pour afficher des publicités. AdMob peut collecter et utiliser :</p>
+      <ul>
+        <li>L'identifiant publicitaire de votre appareil (GAID sur Android)</li>
+        <li>Des données d'utilisation anonymisées pour personnaliser les annonces</li>
+        <li>Des données de localisation approximative pour des publicités pertinentes</li>
+      </ul>
+      <div class="highlight">
+        Pour en savoir plus sur la façon dont Google utilise ces données, consultez la <strong>politique de confidentialité de Google</strong> : <a href="https://policies.google.com/privacy" style="color: var(--green);">policies.google.com/privacy</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Partage des données -->
+    <section>
+      <h2><span class="icon">🔒</span> Partage des données</h2>
+      <p>Nous ne vendons, ne louons et ne partageons pas vos données personnelles avec des tiers, à l'exception de :</p>
+      <ul>
+        <li><strong>Google AdMob</strong> — pour l'affichage de publicités (voir section ci-dessus)</li>
+        <li><strong>Obligations légales</strong> — si la loi l'exige</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Vos droits -->
+    <section>
+      <h2><span class="icon">⚖️</span> Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li>Droit d'accès à vos données personnelles</li>
+        <li>Droit de rectification ou de suppression</li>
+        <li>Droit d'opposition au traitement de vos données</li>
+        <li>Droit de retirer votre consentement à tout moment</li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sécurité -->
+    <section>
+      <h2><span class="icon">🛡️</span> Sécurité</h2>
+      <p>Chamsi ne dispose pas de serveur propre. Toutes les données sensibles (localisation, préférences) sont traitées localement sur votre appareil et ne transitent pas par nos serveurs.</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Modifications -->
+    <section>
+      <h2><span class="icon">📝</span> Modifications de cette politique</h2>
+      <p>Nous nous réservons le droit de mettre à jour cette politique de confidentialité. Toute modification sera publiée sur cette page avec une nouvelle date de mise à jour. Nous vous encourageons à consulter cette page régulièrement.</p>
+    </section>
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <h2>Une question ?</h2>
+      <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles, contactez-nous.</p>
+      <a href="mailto:contact@chamsi.app" class="contact-email">contact@chamsi.app</a>
+    </div>
+
+    <footer>
+      <p style="margin-bottom: 4px;">© 2026 Chamsi – Tous droits réservés</p>
+      <p>بسم الله الرحمن الرحيم</p>
+    </footer>
+
+  </div>
+</body>
+</html>
